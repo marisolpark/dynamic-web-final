@@ -1,0 +1,21 @@
+.Header {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 25px;
+}
+
+.HeaderNav a{
+    color: black;
+    font-size: 22px;
+    margin: 0 8px;
+    padding: 3px;
+    text-decoration: None;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+
+}
