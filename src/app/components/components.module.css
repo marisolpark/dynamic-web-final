@@ -2,16 +2,25 @@
     align-items: center;
     display: flex;
     justify-content: flex-end;
-    padding: 10px 25px;
+    padding: 20px 25px;
+    background-color: #90C0BD;
+    border-bottom: 2px solid #668f8c;
+    margin-bottom: 40px;
 }
 
 .HeaderNav a{
-    color: black;
+    color: #EBE3D8;
     font-size: 22px;
     margin: 0 8px;
     padding: 3px;
     text-decoration: None;
 }
+
+.HeaderNav a:hover{
+    color: #27645F;
+    text-decoration:line-through
+}
+
 
 .Form {
     display: flex;

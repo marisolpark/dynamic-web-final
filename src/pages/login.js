@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import LoginForm from "@/app/components/LoginForm";
+import "../app/globals.css";
 
 export default function Login({ isLoggedIn, loginUser }) {
     const router = useRouter();

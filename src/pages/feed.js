@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import PostCard from "@/app/components/posts";
+import "../app/globals.css";
 
 export default function UserProfile({ isLoggedIn }) {
     const router = useRouter();
