@@ -1,9 +1,13 @@
 import styles from "./components.module.css";
+
 const CreateUserForm = ({ createUser }) => {
     return(
         <div>
             <h2>Create User Form</h2>
             <form className={styles.Form} onSubmit={(e) => createUser(e) }>
+
+                <label htmlFor="username">User Name</label>
+                <input type="text" name="username" id="username"/>
 
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" />

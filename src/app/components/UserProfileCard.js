@@ -2,7 +2,7 @@ import styles from "@/app/components/components.module.css"
 const UserProfileCard = ({ user }) => {
     return(
         <div className={styles.UserProfile}>
-            {/* <h2>Name: {user?.name}</h2> */}
+            <p>Username: {user?.username}</p>
             <p>{user?.email}</p>
         </div>
     );

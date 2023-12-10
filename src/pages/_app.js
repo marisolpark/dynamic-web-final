@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+// import { addDoc, getFirestore } from "firebase/firestore";
 import Header from "@/app/components/Header";
 import firebaseConfig from "@/app/components/firebaseConfig";
 
@@ -11,24 +13,38 @@ export default function MyApp({ Component, pageProps }) {
     const [userInformation, setUserInformation] = useState(null);
     const [error, setError] = useState(null);
 
-    const createUser = useCallback((e) => {
+    const createUser = useCallback(async (e) => {
         e.preventDefault();
+        const username = e.currentTarget.username.value;
         const email = e.currentTarget.email.value;
         const password = e.currentTarget.password.value;
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
+        const db = getFirestore();
+        let user;
+
+        await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
-            const user = userCredentials.user;
-            setIsLoggedIn(true);
-            setUserInformation(user);
-            setError(null);
+            user = userCredentials.user;
         })
         .catch((error) => {
-            const errorCode = error.errorCode;
+            const errorCode = error.code;
             const errorMessage = error.message;
-            console.warn({ error, errorMessage });
+            console.warn({ error, errorCode, errorMessage });
             setError(errorMessage);
         });
+
+        await addDoc(collection(db, "users"), {
+            username: username,
+            userId: user.uid,
+        })
+
+        .then(() => {
+            const userToSet = {...user, username}
+            setIsLoggedIn(true);
+            setUserInformation(userToSet);
+            setError(null);
+        })
+
     }, [setError, setIsLoggedIn, setUserInformation]);
 
     const loginUser = useCallback((e) => {
