@@ -3,10 +3,12 @@
 
  const PostCard = ({ post }) => {
     return (
-        <div className={styles.postContainer}>
-            <p>{post.username}</p>
-            <img src={post.imageURL} alt="" />
-            <p>{post.postContent}</p>
+        <div>
+            <div className={styles.postContainer}>
+                <p>{post.username}</p>
+                <img src={post.imageURL} alt="" />
+                <p>{post.postContent}</p>
+            </div>
         </div>
     )
  }
