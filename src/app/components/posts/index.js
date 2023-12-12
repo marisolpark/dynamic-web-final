@@ -1,10 +1,15 @@
 "use-client"
  import styles from "../posts/PostCard.module.css"
 
- const PostCard = () => (
-    <div className={styles.postContainer}>
-        <h3>Here is your friends post. Still a work in progress</h3>
-    </div>
- );
+ const PostCard = ({ post }) => {
+    return (
+        <div className={styles.postContainer}>
+            <p>{post.username}</p>
+            <img src={post.imageURL} alt="" />
+            <p>{post.postContent}</p>
+        </div>
+    )
+ }
 
  export default PostCard;
+

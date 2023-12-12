@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300;700&display=swap');
+
 .Header {
     align-items: center;
     display: flex;
-    justify-content: flex-end;
+    justify-content:space-between;
     padding: 20px 25px;
     background-color: #90C0BD;
     border-bottom: 2px solid #668f8c;
@@ -25,6 +28,45 @@
 .Form {
     display: flex;
     flex-direction: column;
-    max-width: 375px;
+    max-width: 90%;
+    margin: 0px auto;
+}
 
+.formTitles{
+    text-align: center;
+    color: #EBE3D8;
+}
+
+.inputBox{
+    font-family: Averia Libre;
+    font-size: larger;
+    background-color: #90C0BD;
+    border: 2px solid #EBE3D8;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px 0px;
+}
+
+.button{
+    font-family: Averia Libre;
+    font-size: larger;
+    background-color: #EBE3D8;
+    color: #668f8c;
+    padding: 20px;
+    border-radius: 15px;
+    width: 50%;
+    border: 0px;
+    margin: 20px auto;
+}
+
+.button:hover{
+    background-color:#27645F;
+    color:#EBE3D8;
+}
+
+.logo {
+    font-family: 'Croissant One', serif;
+    font-size: 200%;
+    color:#EBE3D8;
+    font-weight: bold;
 }

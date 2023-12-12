@@ -1,3 +1,9 @@
 .postContainer {
-    border: 2px solid green;
+    /* font-family: Averia Libre; */
+    /* font-size: larger; */
+    background-color: #90C0BD;
+    border: 2px solid #EBE3D8;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 25px 0px;
 }

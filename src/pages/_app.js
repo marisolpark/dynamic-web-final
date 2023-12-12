@@ -6,6 +6,8 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import Header from "@/app/components/Header";
 import firebaseConfig from "@/app/components/firebaseConfig";
 
+
+
 export default function MyApp({ Component, pageProps }) {
     const [appInitialized, setAppInitialized] = useState(false);
     const [isLoading, setIsLoading] = useState(true);

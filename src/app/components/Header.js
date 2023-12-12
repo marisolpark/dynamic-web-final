@@ -3,12 +3,13 @@ import styles from "./components.module.css"
 const Header = ({ isLoggedIn, logoutUser }) => {
     return(
         <header className={styles.Header}>
+            <p className={styles.logo}>Daily Diaries</p>
             <nav className={styles.HeaderNav}>
             {isLoggedIn && (
                 <>
-                <Link href="/">User Profile</Link>
+                <Link href="/profile">User Profile</Link>
                 <Link href="/createpost">Post New Entry</Link>
-                <Link href="/feed">Friends</Link>
+                <Link href="/">Friends</Link>
                 <a onClick={logoutUser}>Log Out</a>
                 </>
             )}

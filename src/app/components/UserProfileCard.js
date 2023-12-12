@@ -3,7 +3,7 @@ const UserProfileCard = ({ user }) => {
     return(
         <div className={styles.UserProfile}>
             <p>Username: {user?.username}</p>
-            <p>{user?.email}</p>
+            {/* <p>{user?.email}</p> */}
         </div>
     );
 };

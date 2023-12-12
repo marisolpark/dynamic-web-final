@@ -3,16 +3,16 @@ import styles from "./components.module.css"
 const LoginForm = ({ loginUser }) => {
     return(
         <div>
-            <h2>LoginForm</h2>
+            {/* <h2>LoginForm</h2> */}
             <form className={styles.Form} onSubmit={(e) => loginUser(e)}>
 
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" />
+                <label htmlFor="email"></label>
+                <input type="email" name="email" placeholder="email" className={styles.inputBox} />
 
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" />
+                <label htmlFor="password"></label>
+                <input type="password" name="password" placeholder="password" className={styles.inputBox} />
                  
-                <button type="submit">Login</button>
+                <button type="submit" className={styles.button}>Login</button>
             </form>
         </div>
     );
