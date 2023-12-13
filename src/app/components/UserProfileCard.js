@@ -4,7 +4,6 @@ const UserProfileCard = ({ user, emailinfo }) => {
         <div className={styles.UserProfile}>
             <p>Username: {user?.username}</p>
             <p>email: {emailinfo?.email}</p>
-            {/* <p>{user?.email}</p> */}
         </div>
     );
 };

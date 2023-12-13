@@ -1,9 +1,10 @@
 "use-client"
 import styles from "../MyDays/MyDays.module.css"
 
-const MyDays = () => (
+const MyDays = ({ userPost }) => (
     <div className={styles.containerBox}>
-        <h3>Here is your day in a specific date. Still a work in progress</h3>
+        <img src={userPost.imageURL} alt="" />
+        <p>{userPost.postContent}</p>
     </div>
  );
 

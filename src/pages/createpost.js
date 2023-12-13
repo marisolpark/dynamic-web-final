@@ -1,6 +1,6 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, addDoc, collection, query, where, getDocs } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, unploadBytes, uploadBytes } from "firebase/storage";
 import CreatePostForm from "@/app/components/CreatePostForm";
 import "../app/globals.css";
@@ -8,10 +8,30 @@ import "../app/globals.css";
 
 export default function CreatePost({ isLoggedIn, userInformation }) {
     const router = useRouter();
-
+    const [user, setUser] = useState({}); 
     useEffect(() => {
         if (! isLoggedIn) router.push("/");
     }, [isLoggedIn]);
+
+    useEffect(() => {
+        async function getUser() {
+            let user = {};
+            const db = getFirestore();
+            const q = query(
+                collection(db, "users"),
+                where("userId", "==", userInformation?.uid)
+            );
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) =>{
+                user = doc.data();
+            });
+            setUser(user);
+        }
+
+        if (userInformation) {
+            getUser();
+        }
+    }, [userInformation]);
 
     const createPostFunction = useCallback(async (e, imageUpload) => {
         e.preventDefault();
@@ -37,12 +57,13 @@ export default function CreatePost({ isLoggedIn, userInformation }) {
             postContent: postContent,
             usedId: usedId,
             imageURL:imageURL || "This is not an image",
+            username: user.username
           });
 
           if(data) {
             router.push("/");
           }
-    }, [addDoc, collection, getFirestore, router, userInformation]);
+    }, [addDoc, collection, getFirestore, router, userInformation, user]);
 
     return(
         <>
