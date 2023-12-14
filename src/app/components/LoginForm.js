@@ -3,7 +3,6 @@ import styles from "./components.module.css"
 const LoginForm = ({ loginUser }) => {
     return(
         <div>
-            {/* <h2>LoginForm</h2> */}
             <form className={styles.Form} onSubmit={(e) => loginUser(e)}>
 
                 <label htmlFor="email"></label>

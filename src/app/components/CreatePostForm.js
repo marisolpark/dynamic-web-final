@@ -4,7 +4,6 @@ const CreatePostForm = ({ createPostFunction }) => {
     const [imageUpload, setImageUpload] = useState();
     return(
         <div>
-            {/* <h2 className={styles.formTitles}>Create Post Form</h2> */}
             <form className={styles.Form} onSubmit={(e) => createPostFunction(e, imageUpload) }>
 
                 <label htmlFor="postContent"></label>

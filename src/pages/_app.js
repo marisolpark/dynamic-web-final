@@ -6,7 +6,6 @@ import Header from "@/app/components/Header";
 import firebaseConfig from "@/app/components/firebaseConfig";
 
 
-
 export default function MyApp({ Component, pageProps }) {
     const [appInitialized, setAppInitialized] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +25,7 @@ export default function MyApp({ Component, pageProps }) {
         await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
             user = userCredentials.user;
+            console.log(user)
         })
         .catch((error) => {
             const errorCode = error.code;
