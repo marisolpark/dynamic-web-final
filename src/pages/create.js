@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import CreateUserForm from "@/app/components/CreateUserForm";
 import "../app/globals.css";
 
-
 export default function CreateUser({ createUser, isLoggedIn }) {
     const router = useRouter();
 

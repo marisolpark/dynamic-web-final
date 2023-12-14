@@ -7,7 +7,6 @@ import MyDays from "@/app/components/MyDays";
 import styles from "./pages.module.css";
 import "../app/globals.css"
 
-
 export default function UserProfile({ isLoggedIn, userInformation }) {
     const router = useRouter();
     const [user, setUser] = useState({});

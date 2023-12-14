@@ -83,7 +83,6 @@ export default function MyApp({ Component, pageProps }) {
         })
     }, [signOut, setIsLoggedIn, setUserInformation, signOut]);
 
-    // initialize firebase
     useEffect(() => {
         initializeApp(firebaseConfig);
         setAppInitialized(true);

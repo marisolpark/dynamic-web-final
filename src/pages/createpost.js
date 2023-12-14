@@ -5,7 +5,6 @@ import { getDownloadURL, getStorage, ref, unploadBytes, uploadBytes } from "fire
 import CreatePostForm from "@/app/components/CreatePostForm";
 import "../app/globals.css";
 
-
 export default function CreatePost({ isLoggedIn, userInformation }) {
     const router = useRouter();
     const [user, setUser] = useState({}); 

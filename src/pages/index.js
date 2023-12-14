@@ -5,7 +5,6 @@ import PostCard from "@/app/components/posts";
 import styles from "./pages.module.css";
 import "../app/globals.css"
 
-
 export default function UserProfile({ isLoggedIn }) {
     const router = useRouter();
     const [allPosts, setAllPosts] = useState([]);

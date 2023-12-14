@@ -1,5 +1,6 @@
 import Link from "next/link"
 import styles from "./components.module.css"
+
 const Header = ({ isLoggedIn, logoutUser }) => {
     return(
         <header className={styles.Header}>
