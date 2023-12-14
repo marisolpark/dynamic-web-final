@@ -39,7 +39,6 @@ export default function UserProfile({ isLoggedIn, userInformation }) {
                 where("usedId", "==", userInformation?.uid)
             );
             const querySnapshot = await getDocs(q);
-            console.log(querySnapshot)
             querySnapshot.forEach((post) =>{
                 posts.push({id: post.id, ...post.data()})
             });
@@ -51,8 +50,6 @@ export default function UserProfile({ isLoggedIn, userInformation }) {
             getUserPosts();
         }
     }, [userInformation]);
-
-    console.log(userPosts)
 
     return(
         <>

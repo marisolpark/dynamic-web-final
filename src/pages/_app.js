@@ -25,7 +25,6 @@ export default function MyApp({ Component, pageProps }) {
         await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
             user = userCredentials.user;
-            console.log(user)
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -34,6 +33,7 @@ export default function MyApp({ Component, pageProps }) {
             setError(errorMessage);
         });
 
+        if (user){
         await addDoc(collection(db, "users"), {
             username: username,
             userId: user.uid,
@@ -45,6 +45,7 @@ export default function MyApp({ Component, pageProps }) {
             setUserInformation(userToSet);
             setError(null);
         })
+    }
 
     }, [setError, setIsLoggedIn, setUserInformation]);
 
