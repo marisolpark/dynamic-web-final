@@ -5,5 +5,5 @@
 
 .feedPostsContainter{
     display: grid;
-    grid-template-columns: repeat(2, minmax(0px, 0.6fr));
+    grid-template-columns: repeat(2, minmax(0px, 0.5fr));
 }

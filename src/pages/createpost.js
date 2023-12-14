@@ -38,6 +38,7 @@ export default function CreatePost({ isLoggedIn, userInformation }) {
         const storage = getStorage();
         const db = getFirestore();
         const postContent = e.currentTarget.postContent.value;
+        const postDate = e.currentTarget.postDate.value;
         const usedId = userInformation.uid
         let imageURL;
         
@@ -55,6 +56,7 @@ export default function CreatePost({ isLoggedIn, userInformation }) {
 
         const data = await addDoc(collection(db, "posts"), {
             postContent: postContent,
+            postDate: postDate,
             usedId: usedId,
             imageURL:imageURL || "This is not an image",
             username: user.username

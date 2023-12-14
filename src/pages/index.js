@@ -33,9 +33,9 @@ export default function UserProfile({ isLoggedIn }) {
             <main>
                 <h1 className={styles.userProfileTitle}>Check Your Friends days</h1>
                 <div className={styles.feedPostsContainter}>
-                {allPosts.map((post, i) => (
+                    {allPosts.map((post, i) => (
                     <PostCard post={post} key={i} />
-                ))}
+                    ))}
                 </div>
             </main>
         </>

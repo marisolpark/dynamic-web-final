@@ -1,3 +1,25 @@
 .containerBox {
     border: 2px solid salmon;
+    background-color: #90C0BD;
+    border: 2px solid #EBE3D8;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 25px 0px;
+    color: #27645F;
+    max-width: 85%;
+    min-height: 500px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+} 
+
+.imagepost{
+    width: 500px;
+    height: 400px;
+    margin: auto;
+}
+
+.postContStyle{
+    padding-top: 20px;
+    font-size:large;
 }

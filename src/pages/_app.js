@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-// import { addDoc, getFirestore } from "firebase/firestore";
 import Header from "@/app/components/Header";
 import firebaseConfig from "@/app/components/firebaseConfig";
 

@@ -55,31 +55,16 @@ export default function UserProfile({ isLoggedIn, userInformation }) {
 
     console.log(userPosts)
 
-
-    // useEffect(() => {
-    //     async function getUserPosts() {
-    //         const userPost = [];
-    //         const db = getFirestore();
-    //         const postQuery = await getDocs(collection(db, "posts"));
-    //         postQuery.forEach((post) => {
-    //             if (post.userId == userInformation.uid) {
-    //                 userPost.push({id: post.id, ...post.data()})
-    //             }
-    //         });
-    //         setUserPosts(userPost);
-    //     }
-    //     getUserPosts();
-    // }, []);   
-
-
     return(
         <>
             <main>
                 <h1 className={styles.userProfileTitle}>Check Out Your Daily Entries!</h1>
                 <UserProfileCard user={user} emailinfo={userInformation}/>
-                {userPosts.map((post, i) => (
-                    <MyDays userPost={post} key={i} />
-                ))}
+                <div className={styles.feedPostsContainter}>
+                    {userPosts.map((post, i) => (
+                        <MyDays userPost={post} key={i} />
+                    ))}
+                </div>
             </main>
         </>
     );

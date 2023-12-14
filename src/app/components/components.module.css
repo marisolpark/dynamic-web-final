@@ -66,7 +66,25 @@
 
 .logo {
     font-family: 'Croissant One', serif;
-    font-size: 200%;
+    font-size: 200%; 
     color:#EBE3D8;
     font-weight: bold;
 }
+
+.userProfileCardStyle{
+    color: #27645F;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+}
+
+.userInfo{
+    padding: 0% 2%;
+}
+
+.imgLable{
+    padding-top: 3%;
+    color: #27645F;
+    font-size: larger;
+}
+
